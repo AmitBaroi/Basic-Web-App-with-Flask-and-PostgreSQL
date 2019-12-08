@@ -7,7 +7,7 @@ from send_mail import send_mail
 app = Flask(__name__)
 
 # Variable to indicate whether we are in development (dev) or production mode
-ENV = 'dev'
+ENV = 'prod'
 
 # Variables for database access config
 db_user = 'postgres'
