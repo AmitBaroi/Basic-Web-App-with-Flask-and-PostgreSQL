@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from utils import get_pw
+from send_mail import send_mail
 
 # Initialize web app
 app = Flask(__name__)
@@ -70,11 +71,15 @@ def submit():
         if db.session.query(Feedback).filter(Feedback.customer == customer).count() == 0:
             # If user hasn't submitted feedback yet
             data = Feedback(customer, dealer, rating, comments)
+            # Add to database
             db.session.add(data)
             db.session.commit()
+            # Send email notification
+            send_mail(customer, dealer, rating, comments)
+            # Show rendered confirmation page
             return render_template('success.html')
 
-        # If user already present in database
+        # If user already present in database show prompt
         return render_template('index.html', message='You have already submitted feedback')
 
 
