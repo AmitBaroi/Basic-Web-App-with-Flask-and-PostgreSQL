@@ -18,9 +18,11 @@ db_name = 'reviews'
 # Setting up database configurations
 if ENV == 'dev': # Development environment
     app.debug = True
+    # Local database
     app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{db_user}:{pw}@{host}/{db_name}'
-else: # Production environment
+else:  # Production environment
     app.debug = False
+    # Heroku database
     app.config['SQLALCHEMY_DATABASE_URI'] = r"postgres://chwrnxjxpwcnlz:5c0dbe1b5eeec662dfe5fb8ff447f8e2312445235eecea1135e594e7bd2670f5@ec2-107-20-234-175.compute-1.amazonaws.com:5432/ddng0euhnqh7lm"
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
