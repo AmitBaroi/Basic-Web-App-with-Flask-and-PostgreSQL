@@ -9,8 +9,8 @@
 </head>
 <body>
     <div class="container">
-        <img src="../static/amt.jpg" alt="My Photo" class="logo">
-        <h3>Welcome to my basic Web App. Please give me some feedback</h3>
+        <img src="../static/welcome.gif" alt="My Photo" class="logo">
+        <h3>Welcome to my basic Web App. Please give me some feedback.</h3>
         {% if message %}
             <p class="message">{{ message | safe }}</p>
         {% endif %}
@@ -52,5 +52,14 @@
             <input type="submit" value="Submit" class="btn">
         </form>
     </div>
+    <footer class="footer">
+    <p>Author: Amit Robert Baroi</p>
+    <p>
+        Contact information:
+        <a href="https://github.com/AmitBaroi">Github Profile</a>.
+        <a href="https://www.linkedin.com/in/amitrobertbaroi/">LinkedIn Profile</a>.
+        Email: amitrobertbaroi@gmail.com
+    </p>
+    </footer>
 </body>
 </html>

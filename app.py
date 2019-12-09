@@ -32,9 +32,8 @@ db = SQLAlchemy(app)
 
 class Feedback(db.Model):
     """
-    Feedback object will represent each user feedback on our web app.
+    Feedback object will represent our 'feedback' table.
     """
-
     __tablename__ = 'feedback'
     id = db.Column(db.Integer, primary_key=True)
     customer = db.Column(db.String(200), unique=True)

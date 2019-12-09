@@ -72,3 +72,13 @@ textarea {
 	outline: none;
 	margin-top: 1rem;
 }
+
+.footer
+{
+    text-align: right;
+    background-color:#26272b;
+    padding: 10px 20px;
+    font-size:15px;
+    line-height:24px;
+    color:#737373;
+}
