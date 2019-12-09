@@ -64,7 +64,7 @@ def submit():
         comments = request.form['comments']
 
         # Prompt message if customer or dealer fields are blank
-        if customer == "" or dealer == "":
+        if customer == "" or dealer == "" or comments == "":
             return render_template('index.html', message='Please enter required fields')
 
         # Check if user already submitted feedback
